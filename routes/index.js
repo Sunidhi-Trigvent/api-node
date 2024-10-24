@@ -7,6 +7,7 @@ import sendOtp from "../methods/sendOtp.js";
 import otpVerify from "./otp-verify/index.js";
 import todo from "./Todo/index.js";
 import products from "./products/index.js";
+import cart from "./cart/index.js";
 
 const router = Router();
 
@@ -16,5 +17,6 @@ router.use("/user", user);
 router.use("/forgot-password", forgotPassword);
 router.use("/otp-verify", otpVerify);
 router.use("/todo", todo);
+router.use("/cart", cart);
 
 export default router;
