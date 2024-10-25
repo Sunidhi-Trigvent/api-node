@@ -1,4 +1,10 @@
+import { cart } from "../../../models/index.js";
+
 export default async (req, res) => {
   const { user } = req;
-  res.send("hello from get", user);
+  const cartItems = await cart
+    .find({ userId: user._id })
+    .populate("userId")
+    .populate("productId");
+  res.send({ cartItems });
 };
